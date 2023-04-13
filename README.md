@@ -1,4 +1,4 @@
-Netlify: https://app.netlify.com/sites/resonant-kelpie-455fca/overview
+Netlify: https://resonant-kelpie-455fca.netlify.app
 
 # Getting Started with Create React App
 
