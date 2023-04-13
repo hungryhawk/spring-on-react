@@ -30,13 +30,11 @@ body {
   padding-right: 30px;
 }
 
-/* блоки хедера выстраиваются в линию  */
 .nav-menu {
   display: flex;
   align-items: center;
 }
 
-/* расстояние между блоками header  */
 .menu-item {
   position: relative;
   cursor: pointer;
@@ -46,19 +44,10 @@ body {
   padding: 20px 32px 20px 0px;
 }
 
-/* при наведении на элемент хедера появляется dropdown  */
 .menu-item:hover .dropdown {
   display: flex;
   flex-direction: column;
 }
-
-/* 
-.menu-link {
-  font-weight: bold;
-  font-family: 'Metrophobic', sans-serif;
-  font-size: 15px;
-  padding: 8px 32px 20px 0px;
-} */
 
 hr {
   color: lightgray;
@@ -95,8 +84,6 @@ i {
   cursor: pointer;
 }
 
-/* расположение block dropdown  */
-
 .dropdown {
   display: none;
   flex-direction: column;
@@ -113,7 +100,6 @@ i {
   z-index: 1000;
 }
 
-/* расположение элементов block dropdown  */
 .dropdown-item {
   list-style: none;
   font-size: 16px;
@@ -339,10 +325,6 @@ i {
 /* css styling for adaptiveness */
 
 @media (max-width: 1070px) {
-  /* .search-wrapper {
-    display: none;
-  } */
-
   .lololo {
     display: block;
   }
@@ -381,12 +363,6 @@ i {
   .burger::after {
     bottom: 0;
   }
-  /* 
-  .menu-link {
-    position: relative;
-    display: block;
-    margin: 0 0 30px 0;
-  } */
 
   .burger.active span {
     transform: scale(0);
@@ -432,12 +408,6 @@ i {
     animation: burgerAnimation 0.4s;
   }
 
-  /* .is-open {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-  } */
-
   .menu-item {
     width: 100%;
     border-bottom: 1px solid hsla(0, 0%, 100%, 0.4);
@@ -457,12 +427,6 @@ i {
   .menu-item:hover {
     color: #5bd263;
   }
-
-  /* .menu-item span {
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-  } */
 
   .arrow {
     content: '';
@@ -484,7 +448,6 @@ i {
     -webkit-transform: rotate(-135deg);
   }
 
-  /* убираем стрелку которая в header  */
   .down {
     display: none;
   }
@@ -499,7 +462,6 @@ i {
     align-items: flex-start;
     width: 100%;
     padding: 10px 10px 10px 0;
-    /* gap: 5px; */
   }
 
   .block-link {
