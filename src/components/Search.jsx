@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, { useState, useRef } from 'react';
 
 function Search({ search, setSearch }) {
   const [change, setChange] = useState(false);
@@ -10,11 +10,8 @@ function Search({ search, setSearch }) {
   };
 
   return (
-    <div
-      className={`search-wrapper ${change ? 'super' : ''}`}
-      onClick={openInput}
-    >
-      <div className="icon"></div>
+    <div className={`search-wrapper ${change ? 'super' : ''}`}>
+      <div className="icon" onClick={openInput}></div>
       <div className="inputContainer">
         <input
           className="input"
