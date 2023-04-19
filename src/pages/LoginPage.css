@@ -109,3 +109,7 @@ h1 {
 #signin p > a:hover {
   border-bottom: 1px solid;
 }
+
+.formName {
+  margin-bottom: 20px;
+}

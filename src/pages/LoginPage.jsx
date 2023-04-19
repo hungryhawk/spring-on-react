@@ -26,8 +26,8 @@ function LoginPage() {
   return (
     <>
       <div className="background">
-        <h1>Sign In Form</h1>
         <div id="wrapper">
+          <h1 className='formName'>Sign In Form</h1>
           <form onSubmit={submitHandle} id="signin" autoComplete="off">
             <input
               id="user"
