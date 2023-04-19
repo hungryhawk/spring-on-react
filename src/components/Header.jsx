@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from './Navbar.jsx';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeBurger } from '../store/burgerSlice.js';
 
 function Header() {
-  const [activeBurger, setActiveBurger] = useState(false);
+  const activeBurger = useSelector((state) => state.burger.active);
+  const dispatch = useDispatch();
+  const overflow = activeBurger
+    ? (document.body.style.overflow = 'hidden')
+    : (document.body.style.overflow = 'auto');
+
+  const handleClick = () => {
+    dispatch(changeBurger());
+  };
 
   return (
     <>
-      <header
-        className={`header ${
-          activeBurger
-            ? (document.body.style.overflow = 'hidden')
-            : (document.body.style.overflow = 'auto')
-        }`}
-      >
+      <header className={`header ${overflow}`}>
         <div className="header-logo">
           <a href="/" title="logo">
             <svg
@@ -136,7 +140,7 @@ function Header() {
           </div>
           <div
             className={`burger white-cross ${activeBurger ? 'active' : ''}`}
-            onClick={() => setActiveBurger(!activeBurger)}
+            onClick={handleClick}
           >
             <span></span>
           </div>

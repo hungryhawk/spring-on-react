@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import navMenu from '../utils/navMenu.js';
+import { useSelector, useDispatch } from 'react-redux';
+import { setHeading } from '../store/navbarSlice.js';
 
 function Navbar() {
-  const [show, setShow] = useState('');
+  const heading = useSelector((state) => state.navbar.heading);
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -12,17 +15,21 @@ function Navbar() {
             className="menu-item"
             key={index}
             onClick={() =>
-              show !== item.title ? setShow(item.title) : setShow('')
+              heading !== item.title
+                ? dispatch(setHeading(item.title))
+                : dispatch(setHeading(''))
             }
           >
             <span>{item.title}</span>
             <i className={item.menuItem.length > 0 ? 'down' : 'hide'}></i>
             <span
-              className={`arrow ${show === item.title ? 'arrow-reverse' : ''}`}
+              className={`arrow ${
+                heading === item.title ? 'arrow-reverse' : ''
+              }`}
             ></span>
             <ul className={item.menuItem.length > 0 ? 'dropdown' : 'hide'}>
-              {item.menuItem.map((item, idn) => (
-                <li key={idn} className="dropdown-item">
+              {item.menuItem.map((item, index) => (
+                <li key={index} className="dropdown-item">
                   <a href="/" className="dropdown-link">
                     {item}
                   </a>
@@ -31,7 +38,7 @@ function Navbar() {
             </ul>
           </div>
 
-          <div className={show === item.title ? 'is-block' : 'hide'}>
+          <div className={heading === item.title ? 'is-block' : 'hide'}>
             {item.menuItem.map((item) => (
               <a href="/" className="block-link">
                 {item}

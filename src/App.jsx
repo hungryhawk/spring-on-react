@@ -1,14 +1,15 @@
-import './App.css';
-import BlockList from './components/BlockList';
-import Header from './components/Header';
-import Main from './components/Main';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
     <>
-      <Header />
-      <Main />
-      <BlockList />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
     </>
   );
 }

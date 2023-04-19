@@ -1,8 +1,17 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSearchTerm } from '../store/filterSlice';
 
-function Search({ search, setSearch }) {
+function Search() {
+  const { searchTerm } = useSelector((state) => state.filter);
+  const dispatch = useDispatch();
+
+  const handleInputValueChange = (e) => {
+    dispatch(setSearchTerm(e.target.value.toLowerCase()));
+  };
+
   const [change, setChange] = useState(false);
-  const inputEl = useRef(null);
+  const inputEl = React.useRef(null);
 
   const openInput = () => {
     setChange((prev) => !prev);
@@ -17,8 +26,8 @@ function Search({ search, setSearch }) {
           className="input"
           type="text"
           placeholder="Search information..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          value={searchTerm}
+          onChange={handleInputValueChange}
           ref={inputEl}
         />
       </div>
