@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"",
     "eject": "react-scripts eject",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.{js,jsx,css,html}\"",
+    "format": "prettier --ignore-path .gitignore --write  --allow-empty \"**/*.{js,jsx,css,html}\"",
     "prepare": "husky install"
   },
   "eslintConfig": {
@@ -50,7 +50,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,css,html}": [
-      "prettier --write --allow-empty"
+      "prettier --write"
     ]
   }
 }
