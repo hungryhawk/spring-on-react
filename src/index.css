@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Metrophobic&family=Open+Sans:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Metrophobic&family=Open+Sans:wght@300;400&display=swap");
 
 * {
   padding: 0;
@@ -8,7 +8,7 @@
 
 html,
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 /* css styles for header */
@@ -39,7 +39,7 @@ body {
   position: relative;
   cursor: pointer;
   font-weight: bold;
-  font-family: 'Metrophobic', sans-serif;
+  font-family: "Metrophobic", sans-serif;
   font-size: 15px;
   padding: 20px 32px 20px 0px;
 }
@@ -148,14 +148,14 @@ i {
 }
 
 .main-header {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin-top: 40px;
   font-size: 3.5rem;
   font-weight: 700;
 }
 
 .main-discription {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin-top: 20px;
   max-width: 960px;
   font-size: 1.3rem;
@@ -196,14 +196,14 @@ i {
 }
 
 .article-header {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 24px;
   color: black;
   font-weight: 400;
 }
 
 .article-text {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   line-height: 1.7rem;
   font-size: 17px;
@@ -224,7 +224,7 @@ i {
 }
 
 .article-text {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 1.7rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -265,7 +265,7 @@ i {
 
 .search-wrapper .icon::before {
   position: absolute;
-  content: '';
+  content: "";
   width: 15px;
   height: 15px;
   border: 3px solid #5bd263;
@@ -275,7 +275,7 @@ i {
 
 .search-wrapper .icon::after {
   position: absolute;
-  content: '';
+  content: "";
   width: 3px;
   height: 12px;
   background: #5bd263;
@@ -348,7 +348,7 @@ i {
 
   .burger::before,
   .burger::after {
-    content: '';
+    content: "";
     position: absolute;
     height: 2px;
     width: 80%;
@@ -379,7 +379,7 @@ i {
 
   .burger.active.white-cross::before,
   .burger.active.white-cross::after {
-    content: '';
+    content: "";
     position: absolute;
     height: 2px;
     width: 80%;
@@ -429,7 +429,7 @@ i {
   }
 
   .arrow {
-    content: '';
+    content: "";
     border: solid gray;
     border-width: 0 2px 2px 0;
     display: inline-block;

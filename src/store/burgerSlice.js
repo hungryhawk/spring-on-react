@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const initialState = {
   active: false,
 };
 
 const burgerSlice = createSlice({
-  name: 'burger',
+  name: "burger",
   initialState,
   reducers: {
     changeBurger: (state, action) => {

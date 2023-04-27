@@ -1,14 +1,14 @@
-import React from 'react';
-import Navbar from './Navbar.jsx';
-import { useSelector, useDispatch } from 'react-redux';
-import { changeBurger } from '../store/burgerSlice.js';
+import React from "react";
+import Navbar from "./Navbar.jsx";
+import { useSelector, useDispatch } from "react-redux";
+import { changeBurger } from "../store/burgerSlice.js";
 
 function Header() {
   const activeBurger = useSelector((state) => state.burger.active);
   const dispatch = useDispatch();
   const overflow = activeBurger
-    ? (document.body.style.overflow = 'hidden')
-    : (document.body.style.overflow = 'auto');
+    ? (document.body.style.overflow = "hidden")
+    : (document.body.style.overflow = "auto");
 
   const handleClick = () => {
     dispatch(changeBurger());
@@ -135,11 +135,11 @@ function Header() {
               ></path>
             </svg>
           </a>
-          <div className={`nav-menu ${activeBurger ? 'open' : ''}`}>
+          <div className={`nav-menu ${activeBurger ? "open" : ""}`}>
             <Navbar />
           </div>
           <div
-            className={`burger white-cross ${activeBurger ? 'active' : ''}`}
+            className={`burger white-cross ${activeBurger ? "active" : ""}`}
             onClick={handleClick}
           >
             <span></span>

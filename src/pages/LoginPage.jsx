@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
-import './LoginPage.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { login, reset } from '../store/login/loginSlice';
+import React, { useState, useEffect } from "react";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import "./LoginPage.css";
+import { useDispatch, useSelector } from "react-redux";
+import { login, reset } from "../store/login/loginSlice";
 
 function LoginPage() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    person: '',
-    password: '',
+    person: "",
+    password: "",
   });
 
   const { person, password } = formData;
@@ -26,7 +26,7 @@ function LoginPage() {
       toast.error(message);
     }
     if (isSuccess || user) {
-      navigate('/', { replace: true });
+      navigate("/", { replace: true });
     }
 
     dispatch(reset());

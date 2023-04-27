@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setSearchTerm } from '../store/blocks/blockSlice';
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchTerm } from "../store/blocks/blockSlice";
 
 function Search() {
   const { searchTerm } = useSelector((state) => state.blocks);
@@ -19,7 +19,7 @@ function Search() {
   };
 
   return (
-    <div className={`search-wrapper ${change ? 'super' : ''}`}>
+    <div className={`search-wrapper ${change ? "super" : ""}`}>
       {/* // <div className="search-wrapper super"> */}
       <div className="icon" onClick={openInput}></div>
       <div className="inputContainer">

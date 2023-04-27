@@ -1,9 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const navbarSlice = createSlice({
-  name: 'navbar',
+  name: "navbar",
   initialState: {
-    heading: '',
+    heading: "",
   },
   reducers: {
     setHeading(state, action) {

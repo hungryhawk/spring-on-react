@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import BlockItem from './BlockItem';
-import { useSelector, useDispatch } from 'react-redux';
-import Search from './Search';
-import { printBlocks } from '../store/blocks/blockSlice';
-import useDebounce from '../utils/useDebounce.js';
+import React, { useEffect, useState, useMemo } from "react";
+import BlockItem from "./BlockItem";
+import { useSelector, useDispatch } from "react-redux";
+import Search from "./Search";
+import { printBlocks } from "../store/blocks/blockSlice";
+import useDebounce from "../utils/useDebounce.js";
 
 function BlockList() {
   const { blocksData, loading, success, error, searchTerm } = useSelector(
