@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import authService from "./authService";
+const API_URL = "https://backend-3raa.onrender.com/api/login";
 
 const initialState = {
   user: null,
@@ -11,22 +11,16 @@ const initialState = {
 
 export const login = createAsyncThunk("user/login", async (user, thunkAPI) => {
   try {
-    return await authService.login(user);
-    // -----------------
-    // axios
-    // const response = await axios.post(API_URL, user);
-    // return response.data;
-    // -------------
-    // fetch
-    // const response = await fetch(API_URL, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(user),
-    // });
-    // const data = await response.json();
-    // return data;
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
+
+    const data = await response.json();
+    return data;
   } catch (error) {
     const message =
       (error.response && error.response.data && error.response.data.message) ||
