@@ -1,47 +1,77 @@
-import React, { useState } from 'react';
-import admin from '../utils/admin.js';
+import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import './LoginPage.css';
-import { useDispatch } from 'react-redux';
-import { changeLogin } from '../store/loginSlice.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, reset } from '../store/login/loginSlice';
 
 function LoginPage() {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [login, setLogin] = useState('');
-  const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({
+    person: '',
+    password: '',
+  });
 
-  const submitHandle = (event) => {
-    event.preventDefault();
-    if (login === admin.login && password === admin.pass) {
-      dispatch(changeLogin());
-      navigate('/', { replace: true });
-    } else {
-      alert('Неверный логин или пароль');
+  const { person, password } = formData;
+
+  const dispatch = useDispatch();
+
+  const { user, isError, isSuccess, message } = useSelector(
+    (state) => state.login
+  );
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
     }
-    setLogin('');
-    setPassword('');
+    if (isSuccess || user) {
+      navigate('/', { replace: true });
+    }
+
+    dispatch(reset());
+  }, [isError, isSuccess, user, message, navigate, dispatch]);
+
+  const onChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
   };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const userData = {
+      person,
+      password,
+    };
+
+    dispatch(login(userData));
+  };
+
   return (
     <>
       <div className="background">
+        <h1>Sign In Form</h1>
         <div id="wrapper">
-          <h1 className='formName'>Sign In Form</h1>
-          <form onSubmit={submitHandle} id="signin" autoComplete="off">
+          <form onSubmit={onSubmit} id="signin" autoComplete="off">
             <input
               id="user"
               type="text"
-              value={login}
-              onChange={(e) => setLogin(e.target.value)}
+              name="person"
+              value={person}
+              onChange={onChange}
               placeholder="username"
+              required
             />
             <input
-              id="pass"
+              id="password"
               type="password"
+              name="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={onChange}
               placeholder="password"
+              required
             />
             <button type="submit">&#xf0da;</button>
           </form>

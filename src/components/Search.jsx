@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setSearchTerm } from '../store/filterSlice';
+import { setSearchTerm } from '../store/blocks/blockSlice';
 
 function Search() {
-  const { searchTerm } = useSelector((state) => state.filter);
+  const { searchTerm } = useSelector((state) => state.blocks);
   const dispatch = useDispatch();
 
   const handleInputValueChange = (e) => {
@@ -20,6 +20,7 @@ function Search() {
 
   return (
     <div className={`search-wrapper ${change ? 'super' : ''}`}>
+      {/* // <div className="search-wrapper super"> */}
       <div className="icon" onClick={openInput}></div>
       <div className="inputContainer">
         <input
