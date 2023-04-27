@@ -6,6 +6,7 @@ import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 
 function App() {
+  let a = 10;
   return (
     <>
       <Routes>
