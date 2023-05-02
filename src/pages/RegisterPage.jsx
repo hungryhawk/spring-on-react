@@ -11,13 +11,13 @@ function RegisterPage() {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
-    password2: "",
+    confirmPassword: "",
     first_name: "",
     last_name: "",
     age: "",
   });
 
-  const { username, password, password2, first_name, last_name, age } =
+  const { username, password, confirmPassword, first_name, last_name, age } =
     formData;
 
   const { user, isError, isSuccess, message } = useSelector(
@@ -28,7 +28,7 @@ function RegisterPage() {
 
   useEffect(() => {
     if (isError) {
-      toast.error(message);
+      toast.error(message[0].msg);
     }
     if (isSuccess || user) {
       navigate("/");
@@ -47,18 +47,15 @@ function RegisterPage() {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    if (password !== password2) {
-      toast.error("Passwords do not match");
-    } else {
-      const userData = {
-        username,
-        password,
-        first_name,
-        last_name,
-        age,
-      };
-      dispatch(register(userData));
-    }
+    const userData = {
+      username,
+      password,
+      confirmPassword,
+      first_name,
+      last_name,
+      age,
+    };
+    dispatch(register(userData));
   };
 
   return (
@@ -82,7 +79,7 @@ function RegisterPage() {
                       required
                     />
                     <input
-                      type="text"
+                      type="password"
                       name="password"
                       value={password}
                       onChange={onChange}
@@ -90,9 +87,9 @@ function RegisterPage() {
                       required
                     />
                     <input
-                      type="password2"
-                      name="password2"
-                      value={password2}
+                      type="password"
+                      name="confirmPassword"
+                      value={confirmPassword}
                       onChange={onChange}
                       placeholder="repeat password"
                       required

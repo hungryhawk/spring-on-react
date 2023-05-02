@@ -23,6 +23,7 @@ function LoginPage() {
 
   useEffect(() => {
     if (isError) {
+      toast.error(message[0].msg);
       toast.error(message);
     }
     if (isSuccess || user) {
@@ -68,7 +69,7 @@ function LoginPage() {
                       value={username}
                       onChange={onChange}
                       placeholder="username"
-                      required
+                      // required
                     />
                     <input
                       type="password"
@@ -76,7 +77,7 @@ function LoginPage() {
                       value={password}
                       onChange={onChange}
                       placeholder="password"
-                      required
+                      // required
                     />
                   </div>
                   <button type="submit" className="blue_btn">
