@@ -1,0 +1,89 @@
+.login_wrapper {
+  background: rgb(210, 231, 171);
+}
+
+.login_wrap {
+  height: 100vh;
+  color: white;
+}
+
+.login_1 h1 {
+  text-align: center;
+  color: white;
+}
+
+.login_2 {
+  text-align: center;
+}
+
+.login_wrap_2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  padding-bottom: 2rem;
+  width: 350px;
+  height: fit-content;
+  user-select: none;
+  margin: 1rem auto;
+  border-radius: 10px;
+}
+
+.login_wrap_2 a {
+  text-decoration: none;
+  display: block;
+  width: 320px;
+}
+.login_wrap_2 button {
+  display: block;
+  width: 100%;
+  height: 50px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.blue_btn {
+  border: none;
+  outline: none;
+  background: lightgreen;
+  padding: 8.5px 12px;
+  border-radius: 7px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.sign_splitter {
+  width: 100%;
+  height: 1px;
+  background: lightgray;
+}
+
+.input_wrap {
+  position: relative;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input_wrap input {
+  outline: none;
+  border: 1px solid lightblue;
+  width: 100%;
+  height: 50px;
+  font-size: 17px;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  color: black;
+}

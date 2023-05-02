@@ -1,4 +1,4 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css");
+/* @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css");
 
 * {
   font-family: "Open Sans", "sans-serif", "FontAwesome";
@@ -25,7 +25,7 @@ h1 {
 }
 
 /* === Sign in Form === */
-#signin {
+/* #signin {
   height: 90px;
   width: 300px;
   border-radius: 8px;
@@ -54,9 +54,9 @@ h1 {
 #signin button[type="submit"] {
   background: rgb(28, 30, 33);
   box-shadow: inset -100px -100px 0 rgb(28, 30, 33); /*Prevent yellow autofill color*/
-  color: rgb(52, 56, 61);
-}
-#signin input[type="text"],
+/* color: rgb(52, 56, 61);
+} */
+/* #signin input[type="text"],
 #signin input[type="password"] {
   position: relative;
   display: block;
@@ -112,4 +112,94 @@ h1 {
 
 .formName {
   margin-bottom: 20px;
+}  */
+
+.login_wrapper {
+  background: rgb(210, 231, 171);
+}
+
+.login_wrap {
+  height: 100vh;
+  color: white;
+}
+
+.login_1 h1 {
+  text-align: center;
+  color: white;
+}
+
+.login_2 {
+  text-align: center;
+}
+
+.login_wrap_2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  padding-bottom: 2rem;
+  width: 350px;
+  height: fit-content;
+  user-select: none;
+  margin: 1rem auto;
+  border-radius: 10px;
+}
+
+.login_wrap_2 a {
+  text-decoration: none;
+  display: block;
+  width: 320px;
+}
+.login_wrap_2 button {
+  display: block;
+  width: 100%;
+  height: 50px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.blue_btn {
+  border: none;
+  outline: none;
+  background: lightgreen;
+  padding: 8.5px 12px;
+  border-radius: 7px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.sign_splitter {
+  width: 100%;
+  height: 1px;
+  background: lightgray;
+}
+
+.input_wrap {
+  position: relative;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input_wrap input {
+  outline: none;
+  border: 1px solid lightblue;
+  width: 100%;
+  height: 50px;
+  font-size: 17px;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  color: black;
 }

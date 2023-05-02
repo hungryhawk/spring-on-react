@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./LoginPage.css";
 import { useDispatch, useSelector } from "react-redux";
-import { login, reset } from "../store/login/loginSlice";
+import { login, reset } from "../store/auth/authSlice";
 
 function LoginPage() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    person: "",
+    username: "",
     password: "",
   });
 
-  const { person, password } = formData;
+  const { username, password } = formData;
 
   const dispatch = useDispatch();
 
   const { user, isError, isSuccess, message } = useSelector(
-    (state) => state.login
+    (state) => state.auth
   );
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function LoginPage() {
       toast.error(message);
     }
     if (isSuccess || user) {
-      navigate("/", { replace: true });
+      navigate("/");
     }
 
     dispatch(reset());
@@ -42,7 +42,7 @@ function LoginPage() {
   const onSubmit = (e) => {
     e.preventDefault();
     const userData = {
-      person,
+      username,
       password,
     };
 
@@ -51,30 +51,45 @@ function LoginPage() {
 
   return (
     <>
-      <div className="background">
-        <h1>Sign In Form</h1>
-        <div id="wrapper">
-          <form onSubmit={onSubmit} id="signin" autoComplete="off">
-            <input
-              id="user"
-              type="text"
-              name="person"
-              value={person}
-              onChange={onChange}
-              placeholder="username"
-              required
-            />
-            <input
-              id="password"
-              type="password"
-              name="password"
-              value={password}
-              onChange={onChange}
-              placeholder="password"
-              required
-            />
-            <button type="submit">&#xf0da;</button>
-          </form>
+      <div className="login">
+        <div className="login_wrapper">
+          <div className="login_wrap">
+            <div className="login_1">
+              <h1>Sign In Form</h1>
+            </div>
+
+            <div className="login_2">
+              <div className="login_wrap_2">
+                <form onSubmit={onSubmit} autoComplete="off">
+                  <div className="input_wrap">
+                    <input
+                      type="text"
+                      name="username"
+                      value={username}
+                      onChange={onChange}
+                      placeholder="username"
+                      required
+                    />
+                    <input
+                      type="password"
+                      name="password"
+                      value={password}
+                      onChange={onChange}
+                      placeholder="password"
+                      required
+                    />
+                  </div>
+                  <button type="submit" className="blue_btn">
+                    Log In
+                  </button>
+                </form>
+                <div className="sign_splitter"></div>
+                <Link to="/signup" className="blue_btn">
+                  Register
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

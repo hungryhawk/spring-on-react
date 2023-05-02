@@ -4,7 +4,6 @@ import blockService from "./blockService";
 const initialState = {
   loading: false,
   blocksData: [],
-  filteredBlocks: [],
   error: false,
   success: false,
   searchTerm: "",
@@ -34,18 +33,6 @@ export const blockSlice = createSlice({
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload;
     },
-    // filterByName: (state, action) => {
-    //   const filteredResult = state.blocksData.filter(
-    //     (block) =>
-    //       block.title.toLowerCase().includes(action.payload.toLowerCase()) ||
-    //       block.description.toLowerCase().includes(action.payload.toLowerCase())
-    //   );
-    //   return {
-    //     ...state,
-    //     filteredBlocks:
-    //       action.payload.length > 0 ? filteredResult : [...state.blocksData],
-    //   };
-    // },
   },
   extraReducers: (builder) => {
     builder
