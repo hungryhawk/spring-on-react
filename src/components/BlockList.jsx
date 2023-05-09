@@ -18,9 +18,9 @@ function BlockList() {
     if (success) {
       setBlockData(blocksData);
     }
-    if (error) {
-      console.log(error);
-    }
+    // if (error) {
+    //   console.log(error);
+    // }
   }, [dispatch, error, success]);
 
   const debouncedSearch = useDebounce(searchTerm, 300);
@@ -44,7 +44,7 @@ function BlockList() {
         <>
           <Search />
           <div className="wrapper-section">
-            {blocks.length > 0 ? (
+            {blocks ? (
               blocks.map((item, index) => <BlockItem key={index} item={item} />)
             ) : (
               <div className="dd">No result</div>

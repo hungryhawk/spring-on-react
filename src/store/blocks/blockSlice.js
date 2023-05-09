@@ -46,6 +46,7 @@ export const blockSlice = createSlice({
       })
       .addCase(printBlocks.rejected, (state, action) => {
         state.loading = false;
+        state.success = false;
         state.error = true;
         state.message = action.payload;
         state.blocksData = [];
