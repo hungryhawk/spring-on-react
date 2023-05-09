@@ -69,15 +69,16 @@ function LoginPage() {
                       value={username}
                       onChange={onChange}
                       placeholder="username"
-                      // required
+                      required
                     />
+                    <span className="text">lgoogog</span>
                     <input
                       type="password"
                       name="password"
                       value={password}
                       onChange={onChange}
                       placeholder="password"
-                      // required
+                      required
                     />
                   </div>
                   <button type="submit" className="blue_btn">
