@@ -71,7 +71,6 @@ function LoginPage() {
                       placeholder="username"
                       required
                     />
-                    <span className="text">lgoogog</span>
                     <input
                       type="password"
                       name="password"

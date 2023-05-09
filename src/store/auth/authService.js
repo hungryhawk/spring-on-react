@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_URL_REGISTER = "http://localhost:5000/api/register";
-const API_URL_LOGIN = "http://localhost:5000/api/login";
+const API_URL_REGISTER = "https://backend-3raa.onrender.com/api/register";
+const API_URL_LOGIN = "https://backend-3raa.onrender.com/api/login";
 
 const register = async (userData) => {
   const response = await axios.post(API_URL_REGISTER, userData);

@@ -1,5 +1,8 @@
 Netlify: https://resonant-kelpie-455fca.netlify.app
 
+// CI=false npm run build
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
