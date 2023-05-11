@@ -41,15 +41,15 @@ function HomePage() {
   //   }
   // );
 
-  useEffect(() => {
-    axios.interceptors.request.use(async (config) => {
-      let currentDate = new Date();
-      const decodeToken = jwt_decode(user);
-      if (decodeToken.exp * 1000 < currentDate.getTime()) {
-        dispatch(logout());
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   axios.interceptors.request.use(async (config) => {
+  //     let currentDate = new Date();
+  //     const decodeToken = jwt_decode(user);
+  //     if (decodeToken.exp * 1000 < currentDate.getTime()) {
+  //       dispatch(logout());
+  //     }
+  //   });
+  // }, []);
 
   if (!user) {
     return <Navigate to="/login" />;
