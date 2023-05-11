@@ -40,19 +40,27 @@ function HomePage() {
   //     return Promise.reject(err);
   //   }
   // );
-  try {
-    axios.interceptors.request.use(async (config) => {
-      let currentDate = new Date();
-      const decodeToken = jwt_decode(user, { headers: true });
-      if (decodeToken.exp * 1000 < currentDate.getTime()) {
-        // localStorage.removeItem('token');
-        localStorage.clear();
-        dispatch(logout());
-      }
-      return config;
-    });
-  } catch (error) {}
 
+  // useEffect(() => {
+  //   axios.interceptors.request.use(async (config) => {
+  //   let currentDate = new Date();
+  //   const decodeToken = jwt_decode(user, { headers: true });
+  //   if (decodeToken.exp * 1000 < currentDate.getTime()) {
+  //     dispatch(logout());
+  //   }
+  //   });
+  // }, []);
+  // axios.create = {};
+  // axios.interceptors.request.use(async (config) => {
+  //   let currentDate = new Date();
+  //   const decodeToken = jwt_decode(user, { headers: true });
+  //   if (decodeToken.exp * 1000 < currentDate.getTime()) {
+  //     // localStorage.removeItem('token');
+  //     localStorage.clear();
+  //     // dispatch(logout());
+  //   }
+  //   return config;
+  // });
   if (!user) {
     return <Navigate to="/login" />;
   }
