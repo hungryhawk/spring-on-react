@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://backend-3raa.onrender.com/api/blocks";
+const API_URL = "https://backend-deploy-5afh.onrender.com/api/blocks";
 
 const getBlocks = async () => {
   // try {
