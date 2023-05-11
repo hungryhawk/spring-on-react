@@ -40,16 +40,18 @@ function HomePage() {
   //     return Promise.reject(err);
   //   }
   // );
-
-  // useEffect(() => {
-  //   axios.interceptors.request.use(async (config) => {
-  //     let currentDate = new Date();
-  //     const decodeToken = jwt_decode(user);
-  //     if (decodeToken.exp * 1000 < currentDate.getTime()) {
-  //       dispatch(logout());
-  //     }
-  //   });
-  // }, []);
+  try {
+    axios.interceptors.request.use(async (config) => {
+      let currentDate = new Date();
+      const decodeToken = jwt_decode(user, { headers: true });
+      if (decodeToken.exp * 1000 < currentDate.getTime()) {
+        // localStorage.removeItem('token');
+        localStorage.clear();
+        dispatch(logout());
+      }
+      return config;
+    });
+  } catch (error) {}
 
   if (!user) {
     return <Navigate to="/login" />;
