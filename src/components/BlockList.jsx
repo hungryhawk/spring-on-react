@@ -13,13 +13,9 @@ function BlockList() {
 
   useEffect(() => {
     dispatch(printBlocks());
-
     if (success) {
       setBlockData(blocksData);
     }
-    // if (error) {
-    //   console.log(error);
-    // }
   }, [dispatch, error, success]);
 
   const debouncedSearch = useDebounce(searchTerm, 300);
@@ -42,10 +38,6 @@ function BlockList() {
       ) : (
         <>
           <Search />
-          {message && (
-            <h1 className="dd">To see the projects you need to log in</h1>
-          )}
-
           <div className="wrapper-section">
             {blocks ? (
               blocks.map((item, index) => <BlockItem key={index} item={item} />)
