@@ -33,6 +33,7 @@ function RegisterPage() {
     }
     if (isSuccess || user) {
       navigate("/");
+      toast.success("You are successfully sign up!");
     }
 
     dispatch(reset());
