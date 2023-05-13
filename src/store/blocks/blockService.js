@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const API_URL = "https://backend-deploy-5afh.onrender.com/api/blocks";
+// const API_URL = 'https://backend-deploy-5afh.onrender.com/api/blocks';
 
-// const API_URL = 'http://localhost:5000/api/blocks';
+const API_URL = "http://localhost:5000/api/blocks";
 
 const getBlocks = async () => {
   // try {
@@ -10,7 +10,7 @@ const getBlocks = async () => {
 
   const response = await axios.get(API_URL, {
     headers: {
-      authorization: "Bearer " + user.accessToken,
+      authorization: "Bearer " + user,
     },
   });
   return response.data.blocks;
