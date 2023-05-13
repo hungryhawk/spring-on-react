@@ -6,9 +6,8 @@ import { printBlocks } from "../store/blocks/blockSlice";
 import useDebounce from "../utils/useDebounce.js";
 
 function BlockList() {
-  const { blocksData, loading, success, error, searchTerm } = useSelector(
-    (state) => state.blocks
-  );
+  const { blocksData, loading, success, error, searchTerm, message } =
+    useSelector((state) => state.blocks);
   const dispatch = useDispatch();
   const [blockData, setBlockData] = useState([]);
 
@@ -43,6 +42,10 @@ function BlockList() {
       ) : (
         <>
           <Search />
+          {message && (
+            <h1 className="dd">To see the projects you need to log in</h1>
+          )}
+
           <div className="wrapper-section">
             {blocks ? (
               blocks.map((item, index) => <BlockItem key={index} item={item} />)
